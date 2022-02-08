@@ -1,0 +1,63 @@
+{
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "lodash.snakecase": "^4.1.1",
+    "objection": "^3.0.1",
+    "pluralize": "^8.0.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/jest": "^27.4.0",
+    "@types/lodash.snakecase": "^4.1.6",
+    "@types/pluralize": "^0.0.29",
+    "husky": "^7.0.4",
+    "npm-upgrade": "^3.1.0",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^1.14.1",
+    "typescript": "^4.5.5"
+  },
+  "author": "Paul Jensen <paul@anephenix.com>",
+  "scripts": {
+    "start": "tsdx watch --target node",
+    "build": "tsdx build --target node",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build --target node",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint && tsdx test"
+    }
+  },
+  "name": "@anephenix/objection-relations",
+  "module": "dist/objection-relations.esm.js",
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/objection-relations.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/objection-relations.esm.js",
+      "limit": "10 KB"
+    }
+  ]
+}
