@@ -1,21 +1,86 @@
-const { getSubjectTable, getObjectTable, getSubjectForeignKey, getObjectForeignKey } = require('../../src/index.ts');
+const { getSubjectTable, getObjectTable, getSubjectForeignKey, getObjectForeignKey, belongsRelation, hasOneRelation, hasManyRelation, hasManyThroughRelation } = require('../../src/index.ts');
 
 describe('objection-relations', () => {
 
     describe('#belongsRelation', () => {
-        test.todo('should define a relationship where a record in one model can belong to a record in another model');
+        test('should define a relationship where a record in one model can belong to a record in another model', () => {
+            const subjectTable = 'posts';
+            const objectTable = 'users';
+            const object = 'User';
+            const objectForeignKey = 'user_id';
+            const result = belongsRelation({
+                modelClass: object,
+				from: `${subjectTable}.${objectForeignKey}`,
+				to: `${objectTable}.id`
+            });
+            expect(result.modelClass).toEqual('User');
+            expect(result.join).toEqual({ from: 'posts.user_id', to: 'users.id'});
+            expect(result.relation.name).toBe('BelongsToOneRelation');
+        });
     });
 
     describe('#hasOneRelation', () => {
-        test.todo('should define a relationship where a record in one model can own a record in another model');
+        test('should define a relationship where a record in one model can own a record in another model', () => {
+            const subjectTable = 'users';
+            const objectTable = 'settings';
+            const object = 'Setting';
+            const subjectForeignKey = 'user_id';
+            const result = hasOneRelation({
+                modelClass: object,
+				from: `${subjectTable}.id`,
+				to: `${objectTable}.${subjectForeignKey}`
+            });
+            expect(result.modelClass).toEqual('Setting');
+            expect(result.join).toEqual({ from: 'users.id', to: 'settings.user_id'});
+            expect(result.relation.name).toBe('HasOneRelation');
+        });
     });
 
     describe('#hasManyRelation', () => {
-        test.todo('should define a relationship where a record in one model can own many records in another model');
+        test('should define a relationship where a record in one model can own many records in another model', () => {
+            const subjectTable = 'users';
+            const objectTable = 'addresses';
+            const object = 'Address';
+            const subjectForeignKey = 'user_id';
+            const result = hasManyRelation({
+                modelClass: object,
+				from: `${subjectTable}.id`,
+				to: `${objectTable}.${subjectForeignKey}`
+            });
+            expect(result.modelClass).toEqual('Address');
+            expect(result.join).toEqual({ from: 'users.id', to: 'addresses.user_id'});
+            expect(result.relation.name).toBe('HasManyRelation');
+        });
     });
 
     describe('#hasManyThroughRelation', () => {
-        test.todo('should define a relationship where a record in one model can own many records in another model, via a join table');
+        test('should define a relationship where a record in one model can own many records in another model, via a join table', () => {
+            const object = 'Company';
+            const subjectTable = 'users';
+            const objectTable = 'companies';
+            const subjectForeignKey = 'user_id';
+            const objectForeignKey = 'company_id';
+            const viaTable = 'employments';
+            const result = hasManyThroughRelation({
+				modelClass: object,
+				from: `${subjectTable}.id`,
+				through: {
+					from: `${viaTable}.${subjectForeignKey}`,
+					to: `${viaTable}.${objectForeignKey}`,
+				},
+				to: `${objectTable}.id`
+            });
+            expect(result.modelClass).toEqual('Company');
+            expect(result.join).toEqual({
+                from: 'users.id',
+                through: {
+                    from: 'employments.user_id',
+                    to: 'employments.company_id',
+                },
+                to: 'companies.id'
+            });
+            expect(result.relation.name).toBe('ManyToManyRelation');
+        });
     });
 
     describe('#relation', () => {
