@@ -1,4 +1,4 @@
-const { getSubjectTable, getObjectTable, getSubjectForeignKey, getObjectForeignKey, belongsRelation, hasOneRelation, hasManyRelation, hasManyThroughRelation } = require('../../src/index.ts');
+const { getSubjectTable, getObjectTable, getSubjectForeignKey, getObjectForeignKey, belongsRelation, hasOneRelation, hasManyRelation, hasManyThroughRelation, relation } = require('../../src/index.ts');
 
 describe('objection-relations', () => {
 
@@ -86,33 +86,87 @@ describe('objection-relations', () => {
     describe('#relation', () => {
 
         describe('when passed a relType of hasOne', () => {
-            test.todo('should return a relationship where a record in one model can own a record in another model');
+            test('should return a relationship where a record in one model can own a record in another model', () => {
+                const subject = 'User';
+                const relType = 'hasOne';
+                const object = 'Setting';
+                const result = relation({subject, relType, object});
+                expect(result.modelClass).toEqual('Setting');
+                expect(result.join).toEqual({ from: 'users.id', to: 'settings.user_id'});
+                expect(result.relation.name).toBe('HasOneRelation');
+            });
         });
 
         describe('when passed a relType of hasMany', () => {
-            test.todo('should return a relationship where a record in one model can own many records in another model');
+            test('should return a relationship where a record in one model can own many records in another model', () => {
+                const subject = 'User';
+                const relType = 'hasMany';
+                const object = 'Address';
+                const result = relation({subject, relType, object});
+                expect(result.modelClass).toEqual('Address');
+                expect(result.join).toEqual({ from: 'users.id', to: 'addresses.user_id'});
+                expect(result.relation.name).toBe('HasManyRelation');                
+            });
         });
 
         describe('when passed a relType of hasManyThrough', () => {
-            test.todo('should return a relationship where a record in one model can own many records in another model, via a join table');
+            test('should return a relationship where a record in one model can own many records in another model, via a join table', () => {
+                const subject = 'User';
+                const relType = 'hasManyThrough';
+                const object = 'Company';
+                const via = 'Employment';
+                const result = relation({subject, relType, object, via});
+                expect(result.modelClass).toEqual('Company');
+                expect(result.join).toEqual({
+                    from: 'users.id',
+                    through: {
+                        from: 'employments.user_id',
+                        to: 'employments.company_id',
+                    },
+                    to: 'companies.id'
+                });
+                expect(result.relation.name).toBe('ManyToManyRelation');                
+            });
         });
 
         describe('when passed a relType of belongsTo', () => {
-            test.todo('should return a relationship where a record in one model can belong to a record in another model');
-        });
-
-        describe('when passed a via table', () => {
-            test.todo('should return a relationship where a record in one model can own many records in another model, via a join table');
+            test('should return a relationship where a record in one model can belong to a record in another model', () => {
+                const subject = 'Post';
+                const relType = 'belongsTo';
+                const object = 'User';
+                const result = relation({subject, relType, object});
+                expect(result.modelClass).toEqual('User');
+                expect(result.join).toEqual({ from: 'posts.user_id', to: 'users.id'});
+                expect(result.relation.name).toBe('BelongsToOneRelation');
+            });
         });
 
         describe('when passed options', () => {
 
             describe('when passed a subjectTable', () => {
-                test.todo('should use that subjectTable in the join')
+                test('should use that subjectTable in the join', () => {
+                    const subject = 'User';
+                    const relType = 'hasMany';
+                    const object = 'Address';
+                    const subjectTable = 'account_users';
+                    const result = relation({subject, relType, object, options: { subjectTable }});
+                    expect(result.modelClass).toEqual('Address');
+                    expect(result.join).toEqual({ from: 'account_users.id', to: 'addresses.user_id'});
+                    expect(result.relation.name).toBe('HasManyRelation');                    
+                })
             });
 
             describe('when passed a objectTable', () => {
-                test.todo('should use that objectTable in the join')
+                test('should use that objectTable in the join', () => {
+                    const subject = 'User';
+                    const relType = 'hasMany';
+                    const object = 'Address';
+                    const objectTable = 'shipping_addresses';
+                    const result = relation({subject, relType, object, options: { objectTable }});
+                    expect(result.modelClass).toEqual('Address');
+                    expect(result.join).toEqual({ from: 'users.id', to: 'shipping_addresses.user_id'});
+                    expect(result.relation.name).toBe('HasManyRelation');                                        
+                })
             });
 
         });
