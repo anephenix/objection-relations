@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -31,8 +31,8 @@
   "scripts": {
     "start": "tsdx watch --target node",
     "build": "tsdx build --target node",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
+    "test": "tsdx test --collectCoverage",
+    "lint": "tsdx lint --fix",
     "prepare": "tsdx build --target node",
     "size": "size-limit",
     "analyze": "size-limit --why"

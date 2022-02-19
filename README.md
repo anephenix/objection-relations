@@ -3,12 +3,12 @@
 A relations helper for Objection.js. This provides a convenient way to define
 relations in the `relationMappings` function on an Objection.js model.
 
-For example, say you have a table called "Persons" with this relation mapping:
+For example, say you have a table called "Users" with this relation mapping:
 
 ```javascript
-class Person extends Model {
+class User extends Model {
   static get tableName() {
-    return 'persons';
+    return 'users';
   }
 
   static get relationMappings() {
@@ -17,8 +17,8 @@ class Person extends Model {
         relation: Model.HasManyRelation,
         modelClass: Address,
         join: {
-          from: 'persons.id',
-          to: 'addresses.person_id',
+          from: 'users.id',
+          to: 'addresses.user_id',
         },
       },
     };
@@ -29,20 +29,20 @@ class Person extends Model {
 You can use the objection-relations helper module to write the instead:
 
 ```javascript
-import { relation } from '@anephenix/objection-relations';
+import { ObjectionRelation } from '@anephenix/objection-relations';
 
-class Person extends Model {
+class User extends Model {
   static get tableName() {
-    return 'persons';
+    return 'users';
   }
 
   static get relationMappings() {
+    const or = new ObjectionRelation({
+      subject: this.name,
+      modelPath: __dirname,
+    });
     return {
-      addresses: relation({
-        subject: 'Person',
-        relType: 'hasMany',
-        object: 'Address',
-      }),
+      addresses: or.hasMany('Address'),
     };
   }
 }
@@ -53,7 +53,11 @@ The helper function will do the following:
 - Setup the relation type from Objection.js (hasOne, hasMany, hasMnayThrough, belongsTo)
 - Define the join table based on the properties of the subject and object
   models, if they follow a particular pattern (tables for models are named in
-  plural format, and foreign keys use a singular format).
+  plural format, and foreign keys use a singular format). e.g.
+
+| Model | table name | foreign key |
+| ----- | ---------- | ----------- |
+| User  | users      | user_id     |
 
 ## Dependencies
 
@@ -72,7 +76,7 @@ You can setup different kinds of database table relationships like this:
 ### Belongs to
 
 ```javascript
-relation({ subject: 'Post', relType: 'belongsTo', object: 'User' });
+or.belongsTo('Role');
 ```
 
 Is equivalent to writing:
@@ -80,10 +84,10 @@ Is equivalent to writing:
 ```javascript
 {
     relation: Model.BelongsToOneRelation,
-    modelClass: User,
+    modelClass: 'Role',
     join: {
-        from: 'posts.user_id',
-        to: 'users.id'
+        from: 'users.role_id',
+        to: 'roles.id'
     }
 }
 ```
@@ -91,7 +95,7 @@ Is equivalent to writing:
 ### Has one
 
 ```javascript
-relation({ subject: 'User', relType: 'hasOne', object: 'Setting' });
+or.hasOne('Setting');
 ```
 
 Is equivalent to writing:
@@ -99,7 +103,7 @@ Is equivalent to writing:
 ```javascript
 {
     relation: Model.HasOneRelation,
-    modelClass: Setting,
+    modelClass: 'Setting',
     join: {
         from: 'users.id',
         to: 'settings.user_id'
@@ -110,7 +114,7 @@ Is equivalent to writing:
 ### Has many
 
 ```javascript
-relation({ subject: 'User', relType: 'hasMany', object: 'Address' });
+or.hasMany('Address');
 ```
 
 Is equivalent to writing:
@@ -131,12 +135,7 @@ Is equivalent to writing:
 For relationships defined through a join table, you can write this:
 
 ```javascript
-relation({
-  subject: 'User',
-  relType: 'hasManyThrough',
-  object: 'Company',
-  via: 'Employment',
-});
+or.hasManyThrough('Company', 'Employment');
 ```
 
 This is equivalent to:
@@ -168,12 +167,7 @@ Say a `User` model has many addresses, but the database table is called
 'account_users', you can write this code:
 
 ```javascript
-relation({
-  subject: 'User',
-  relType: 'hasMany',
-  object: 'Address',
-  options: { subjectTable: 'account_users' },
-});
+or.hasMany('Address', { subjectTable: 'account_users' });
 ```
 
 Which is equivalent to writing:
@@ -195,12 +189,7 @@ The same applies for the object table. Say for example the `Address` model has
 the database table 'shipping_addresses', you could write this:
 
 ```javascript
-relation({
-  subject: 'User',
-  relType: 'hasMany',
-  object: 'Address',
-  options: { objectTable: 'shipping_addresses' },
-});
+or.hasMany('Address', { objectTable: 'shipping_addresses' });
 ```
 
 Which is equivalent to writing:
@@ -222,12 +211,7 @@ If you find that the foreign key is not a singular form of the related model,
 then you can pass a foreign key for the subject like this:
 
 ```javascript
-relation({
-  subject: 'User',
-  relType: 'hasMany',
-  object: 'Address',
-  options: { subjectForeignKey: 'account_user_id' },
-});
+or.hasMany('Address', { subjectForeignKey: 'account_user_id' });
 ```
 
 Which is equivalent to writing:
@@ -245,15 +229,10 @@ Which is equivalent to writing:
 
 ### ObjectForeignKey
 
-You can pass a custom foreign key for the object like this:
+You can pass a custom foreign key for the object (Like a Post model) like this:
 
 ```javascript
-relation({
-  subject: 'Post',
-  relType: 'belongsTo',
-  object: 'User',
-  options: { objectForeignKey: 'author_id' },
-});
+or.belongsTo('User', { objectForeignKey: 'author_id' });
 ```
 
 Is equivalent to writing:
