@@ -1,5 +1,7 @@
 # objection-relations
 
+[![Node.js CI](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml/badge.svg)](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml)
+
 A relations helper for Objection.js. This provides a convenient way to define
 relations in the `relationMappings` function on an Objection.js model.
 
