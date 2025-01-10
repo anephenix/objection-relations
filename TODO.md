@@ -5,4 +5,5 @@
 - [x] Update documentation for it
 - [ ] See if you can detect the modelPath by default?
 - [ ] Replace tsdx with TypeScript and Mocha
+- [ ] Fix size script as well
 - [ ] Automate publishing NPM packages
