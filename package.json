@@ -37,11 +37,11 @@
     "size": "size-limit",
     "start": "tsdx watch --target node",
     "test": "tsdx test --collectCoverage",
-    "update-changelog": "npx ts-node scripts/update-changelog.ts"
+    "update-changelog": "node scripts/update-changelog.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint && npm run size && tsdx test"
+      "pre-commit": "tsdx lint && tsdx test"
     }
   },
   "name": "@anephenix/objection-relations",
