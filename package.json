@@ -29,17 +29,19 @@
   },
   "author": "Paul Jensen <paul@anephenix.com>",
   "scripts": {
-    "start": "tsdx watch --target node",
+    "analyze": "size-limit --why",
     "build": "tsdx build --target node",
-    "test": "tsdx test --collectCoverage",
     "lint": "tsdx lint --fix",
-    "prepare": "tsdx build --target node",
+    "prepare-patch-release": "npm run update-changelog && git add CHANGELOG.md && git commit -m \"Updated changelog\" && npm version patch",
+    "publish-patch-release": "npm run prepare-patch-release && git push origin main && git push --tags",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "start": "tsdx watch --target node",
+    "test": "tsdx test --collectCoverage",
+    "update-changelog": "npx ts-node scripts/update-changelog.ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint && tsdx test"
+      "pre-commit": "tsdx lint && npm run size && tsdx test"
     }
   },
   "name": "@anephenix/objection-relations",
