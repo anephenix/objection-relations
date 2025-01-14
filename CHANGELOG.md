@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.0.5 - Tuesday 14th January, 2025
+
+- Merge pull request #17 from anephenix/dependabot/npm_and_yarn/size-limit-11.1.6
+- Bump size-limit from 7.0.8 to 11.1.6
+
 ### 0.0.4 - Monday 13th January, 2025
 
 - Merge pull request #16 from anephenix/dependabot/npm_and_yarn/types/lodash.snakecase-4.1.9
