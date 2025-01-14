@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.0.6 - Tuesday 14th January, 2025
+
+- 0.0.5
+- Updated changelog
+- Merge pull request #17 from anephenix/dependabot/npm_and_yarn/size-limit-11.1.6
+- Bump size-limit from 7.0.8 to 11.1.6
+
 ### 0.0.5 - Tuesday 14th January, 2025
 
 - Merge pull request #17 from anephenix/dependabot/npm_and_yarn/size-limit-11.1.6
