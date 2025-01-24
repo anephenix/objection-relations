@@ -1,6 +1,6 @@
 # objection-relations
 
-[![Node.js CI](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml/badge.svg)](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/33642d97558a57dc7c1d/maintainability)](https://codeclimate.com/github/anephenix/objection-relations/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/33642d97558a57dc7c1d/test_coverage)](https://codeclimate.com/github/anephenix/objection-relations/test_coverage)
+[![npm version](https://badge.fury.io/js/%40anephenix%2Fobjection-relations.svg)](https://badge.fury.io/js/%40anephenix%2Fobjection-relations) [![Node.js CI](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml/badge.svg)](https://github.com/anephenix/objection-relations/actions/workflows/node.js.yml) [![Maintainability](https://api.codeclimate.com/v1/badges/33642d97558a57dc7c1d/maintainability)](https://codeclimate.com/github/anephenix/objection-relations/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/33642d97558a57dc7c1d/test_coverage)](https://codeclimate.com/github/anephenix/objection-relations/test_coverage) [![Socket Badge](https://socket.dev/api/badge/npm/package/@anephenix/objection-relations)](https://socket.dev/npm/package/@anephenix/objection-relations)
 
 A relations helper for Objection.js. This provides a convenient way to define
 relations in the `relationMappings` function on an Objection.js model.
