@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.0.7 - Tuesday 4th February, 2025
+
+- Replaced tsdx with typescript and fixed size script
+- Update Badges
+
 ### 0.0.6 - Tuesday 14th January, 2025
 
 - 0.0.5
