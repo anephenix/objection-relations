@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.8 - Tuesday 4th February, 2025
+
+- Installed husky hooks and fixed tests
+
 ### 0.0.7 - Tuesday 4th February, 2025
 
 - Replaced tsdx with typescript and fixed size script
