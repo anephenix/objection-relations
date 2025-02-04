@@ -42,11 +42,12 @@
     "size": "size-limit",
     "start": "tsdx watch --target node",
     "test": "NODE_ENV=test npx mocha --require ts-node/register --extensions ts test/**/*",
-    "update-changelog": "npx ts-node scripts/update-changelog.ts"
+    "update-changelog": "npx ts-node scripts/update-changelog.ts",
+    "prepare": "husky"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint && tsdx test"
+      "pre-commit": "npm run lint && npm test"
     }
   },
   "name": "@anephenix/objection-relations",

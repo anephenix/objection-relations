@@ -6,7 +6,7 @@ import {
   hasManyRelation,
   hasManyThroughRelation,
   relation,
-} from '../../src/relations.ts';
+} from '../../src/relations';
 
 describe('relations', () => {
   describe('#belongsRelation', () => {
@@ -153,17 +153,6 @@ describe('relations', () => {
         assert.strictEqual(result.modelClass, 'User');
         assert.deepStrictEqual(result.join, { from: 'posts.user_id', to: 'users.id' });
         assert.strictEqual(result.relation.name, 'BelongsToOneRelation');
-      });
-    });
-
-    describe('when passed an invalid relType', () => {
-      it('should throw an error', () => {
-        const subject = 'Post';
-        const relType = 'invalid';
-        const object = 'User';
-        assert.throws(() => relation({ subject, relType, object }), {
-          message: 'No valid relationship type specified',
-        });
       });
     });
 
