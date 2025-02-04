@@ -1,73 +1,74 @@
+import assert from 'assert';
 import { ObjectionRelation } from '../../src/index';
 
 describe('objection-relations', () => {
   describe('ObjectionRelation class', () => {
     describe('instantiation', () => {
-      test('should return an instance', () => {
+      it('should return an instance', () => {
         const instance = new ObjectionRelation({
           subject: 'User',
           modelPath: 'src/models',
         });
-        expect(instance).toBeInstanceOf(ObjectionRelation);
-        expect(instance.subject).toBe('User');
-        expect(instance.modelPath).toBe('src/models');
+        assert(instance instanceof ObjectionRelation);
+        assert.strictEqual(instance.subject, 'User');
+        assert.strictEqual(instance.modelPath, 'src/models');
       });
     });
 
     describe('#belongsTo', () => {
-      test('should define a relationship where a record in one model can belong to a record in another model', () => {
+      it('should define a relationship where a record in one model can belong to a record in another model', () => {
         const or = new ObjectionRelation({
           subject: 'User',
           modelPath: 'src/models',
         });
         const belongsTo = or.belongsTo('Category');
-        expect(belongsTo.modelClass).toEqual('src/models/Category');
-        expect(belongsTo.join).toEqual({
+        assert.strictEqual(belongsTo.modelClass, 'src/models/Category');
+        assert.deepStrictEqual(belongsTo.join, {
           from: 'users.category_id',
           to: 'categories.id',
         });
-        expect(belongsTo.relation.name).toBe('BelongsToOneRelation');
+        assert.strictEqual(belongsTo.relation.name, 'BelongsToOneRelation');
       });
     });
 
     describe('#hasOne', () => {
-      test('should define a relationship where a record in one model can own a record in another model', () => {
+      it('should define a relationship where a record in one model can own a record in another model', () => {
         const or = new ObjectionRelation({
           subject: 'User',
           modelPath: 'src/models',
         });
         const hasOne = or.hasOne('Setting');
-        expect(hasOne.modelClass).toEqual('src/models/Setting');
-        expect(hasOne.join).toEqual({
+        assert.strictEqual(hasOne.modelClass, 'src/models/Setting');
+        assert.deepStrictEqual(hasOne.join, {
           from: 'users.id',
           to: 'settings.user_id',
         });
-        expect(hasOne.relation.name).toBe('HasOneRelation');
+        assert.strictEqual(hasOne.relation.name, 'HasOneRelation');
       });
     });
 
     describe('#hasMany', () => {
-      test('should define a relationship where a record in one model can own many records in another model', () => {
+      it('should define a relationship where a record in one model can own many records in another model', () => {
         const or = new ObjectionRelation({
           subject: 'User',
           modelPath: 'src/models',
         });
         const hasMany = or.hasMany('Post');
-        expect(hasMany.modelClass).toEqual('src/models/Post');
-        expect(hasMany.join).toEqual({ from: 'users.id', to: 'posts.user_id' });
-        expect(hasMany.relation.name).toBe('HasManyRelation');
+        assert.strictEqual(hasMany.modelClass, 'src/models/Post');
+        assert.deepStrictEqual(hasMany.join, { from: 'users.id', to: 'posts.user_id' });
+        assert.strictEqual(hasMany.relation.name, 'HasManyRelation');
       });
     });
 
     describe('#hasManyThrough', () => {
-      test('should define a relationship where a record in one model can own many records in another model, via a join table', () => {
+      it('should define a relationship where a record in one model can own many records in another model, via a join table', () => {
         const or = new ObjectionRelation({
           subject: 'User',
           modelPath: 'src/models',
         });
         const hasManyThrough = or.hasManyThrough('Group', 'UserGroupJoin');
-        expect(hasManyThrough.modelClass).toEqual('src/models/Group');
-        expect(hasManyThrough.join).toEqual({
+        assert.strictEqual(hasManyThrough.modelClass, 'src/models/Group');
+        assert.deepStrictEqual(hasManyThrough.join, {
           from: 'users.id',
           to: 'groups.id',
           through: {
@@ -75,7 +76,7 @@ describe('objection-relations', () => {
             to: 'user_group_joins.group_id',
           },
         });
-        expect(hasManyThrough.relation.name).toBe('ManyToManyRelation');
+        assert.strictEqual(hasManyThrough.relation.name, 'ManyToManyRelation');
       });
     });
   });

@@ -16,28 +16,33 @@
     "pluralize": "^8.0.0"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^11.1.6",
+    "@eslint/js": "^9.19.0",
     "@types/jest": "^29.5.14",
     "@types/lodash.snakecase": "^4.1.9",
     "@types/pluralize": "^0.0.33",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
     "husky": "^9.1.7",
-    "npm-upgrade": "^3.1.0",
+    "mocha": "^11.1.0",
+    "nyc": "^17.1.0",
     "size-limit": "^11.1.6",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.8.1",
-    "typescript": "^5.7.3"
+    "size-limit-preset-node-lib": "^0.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   },
   "author": "Paul Jensen <paul@anephenix.com>",
   "scripts": {
     "analyze": "size-limit --why",
-    "build": "tsdx build --target node",
-    "lint": "tsdx lint --fix",
+    "build": "tsc --project tsconfig.json",
+    "cover": "NODE_ENV=test npx nyc --reporter=lcov npm t",
+    "lint": "npx eslint .",
     "prepare-patch-release": "npm run update-changelog && git add CHANGELOG.md && git commit -m \"Updated changelog\" && npm version patch",
     "publish-patch-release": "npm run prepare-patch-release && git push origin main && git push --tags",
     "size": "size-limit",
     "start": "tsdx watch --target node",
-    "test": "tsdx test --collectCoverage",
-    "update-changelog": "node scripts/update-changelog.js"
+    "test": "NODE_ENV=test npx mocha --require ts-node/register --extensions ts test/**/*",
+    "update-changelog": "npx ts-node scripts/update-changelog.ts"
   },
   "husky": {
     "hooks": {
@@ -54,11 +59,7 @@
   },
   "size-limit": [
     {
-      "path": "dist/objection-relations.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/objection-relations.esm.js",
+      "path": "dist/index.js",
       "limit": "10 KB"
     }
   ]
