@@ -1,5 +1,18 @@
 # Changelog
 
+### 0.0.9 - Saturday 15th February, 2025
+
+- Fixed size script
+- Merge pull request #22 from anephenix/dependabot/npm_and_yarn/globals-15.15.0
+- Bump globals from 15.14.0 to 15.15.0
+- Merge pull request #21 from anephenix/dependabot/npm_and_yarn/eslint-9.20.1
+- Bump eslint from 9.20.0 to 9.20.1
+- Merge pull request #20 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.24.0
+- Bump typescript-eslint from 8.23.0 to 8.24.0
+- Merge pull request #18 from anephenix/dependabot/npm_and_yarn/eslint-9.20.0
+- Bump eslint from 9.19.0 to 9.20.0
+- Fixed for ndoe.js workflow GitHub Action
+
 ### 0.0.8 - Tuesday 4th February, 2025
 
 - Installed husky hooks and fixed tests
