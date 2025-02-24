@@ -1,5 +1,18 @@
 # Changelog
 
+### 0.0.10 - Monday 24th February, 2025
+
+- Merge pull request #27 from anephenix/dependabot/npm_and_yarn/eslint-9.21.0
+- Bump eslint from 9.20.1 to 9.21.0
+- Merge pull request #26 from anephenix/dependabot/npm_and_yarn/eslint/js-9.21.0
+- Bump @eslint/js from 9.20.0 to 9.21.0
+- Merge pull request #25 from anephenix/dependabot/npm_and_yarn/globals-16.0.0
+- Merge pull request #24 from anephenix/dependabot/npm_and_yarn/size-limit-11.2.0
+- Bump globals from 15.15.0 to 16.0.0
+- Bump size-limit from 11.1.6 to 11.2.0
+- Merge pull request #23 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.24.1
+- Bump typescript-eslint from 8.24.0 to 8.24.1
+
 ### 0.0.9 - Saturday 15th February, 2025
 
 - Fixed size script
