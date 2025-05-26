@@ -1,5 +1,45 @@
 # Changelog
 
+### 0.0.13 - Monday 26th May, 2025
+
+- Merge pull request #62 from anephenix/dependabot/npm_and_yarn/mocha-11.5.0
+- Merge pull request #61 from anephenix/dependabot/npm_and_yarn/globals-16.2.0
+- Bump mocha from 11.4.0 to 11.5.0
+- Bump globals from 16.1.0 to 16.2.0
+- Merge pull request #60 from anephenix/dependabot/npm_and_yarn/size-limit-preset-node-lib-0.4.0
+- Merge pull request #59 from anephenix/dependabot/npm_and_yarn/mocha-11.4.0
+- Bump size-limit-preset-node-lib from 0.3.0 to 0.4.0
+- Bump mocha from 11.3.0 to 11.4.0
+- Merge pull request #58 from anephenix/dependabot/npm_and_yarn/eslint/js-9.27.0
+- Merge pull request #57 from anephenix/dependabot/npm_and_yarn/eslint-9.27.0
+- Merge pull request #56 from anephenix/dependabot/npm_and_yarn/mocha-11.3.0
+- Bump @eslint/js from 9.26.0 to 9.27.0
+- Bump eslint from 9.26.0 to 9.27.0
+- Bump mocha from 11.2.2 to 11.3.0
+- Merge pull request #55 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.32.1
+- Bump typescript-eslint from 8.32.0 to 8.32.1
+- Merge pull request #54 from anephenix/dependabot/npm_and_yarn/globals-16.1.0
+- Bump globals from 16.0.0 to 16.1.0
+- Merge pull request #53 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.32.0
+- Bump typescript-eslint from 8.31.1 to 8.32.0
+- Merge pull request #52 from anephenix/dependabot/npm_and_yarn/eslint-9.26.0
+- Merge pull request #51 from anephenix/dependabot/npm_and_yarn/eslint/js-9.26.0
+- Bump eslint from 9.25.1 to 9.26.0
+- Bump @eslint/js from 9.25.1 to 9.26.0
+- Merge pull request #50 from anephenix/dependabot/npm_and_yarn/mocha-11.2.2
+- Bump mocha from 11.1.0 to 11.2.2
+- Merge pull request #49 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.31.1
+- Bump typescript-eslint from 8.31.0 to 8.31.1
+- Merge pull request #48 from anephenix/dependabot/npm_and_yarn/eslint-9.25.1
+- Merge pull request #47 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.31.0
+- Bump typescript-eslint from 8.30.1 to 8.31.0
+- Bump eslint from 9.24.0 to 9.25.1
+- Merge pull request #46 from anephenix/dependabot/npm_and_yarn/eslint/js-9.25.1
+- Bump @eslint/js from 9.24.0 to 9.25.1
+- Upgrade GitHub action to use v4 of setup-nodejs
+- Merge pull request #43 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.30.1
+- Bump typescript-eslint from 8.29.1 to 8.30.1
+
 ### 0.0.12 - Tuesday 8th April, 2025
 
 - Updated dependencies
