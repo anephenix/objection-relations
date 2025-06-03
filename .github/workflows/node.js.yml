@@ -7,10 +7,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read  # Required for checkout
-  actions: read   # Optional: If you’re using GitHub-hosted runners, allows reading actions
-  checks: write   # Required to update the status of checks (test results)
-  statuses: write # Required to set commit statuses (for PRs and commits)
+    contents: read
 
 jobs:
   build:
