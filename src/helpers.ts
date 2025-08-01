@@ -1,16 +1,16 @@
-import snakeCase from 'lodash.snakecase';
-import pluralize from 'pluralize';
-import { join } from 'path';
-import { CommonRelationOrTableOrForeignKeyProps } from './global';
+import { join } from "node:path";
+import snakeCase from "lodash.snakecase";
+import pluralize from "pluralize";
+import type { CommonRelationOrTableOrForeignKeyProps } from "./global";
 
 // Types
 
 type SubjectProps = CommonRelationOrTableOrForeignKeyProps & {
-  subject: string;
+	subject: string;
 };
 
 type ObjectProps = CommonRelationOrTableOrForeignKeyProps & {
-  object: string;
+	object: string;
 };
 
 type ViaProps = string | undefined;
@@ -20,7 +20,7 @@ type ViaProps = string | undefined;
     plural version of the subject model.
 */
 export function getSubjectTable({ subject, options }: SubjectProps) {
-  return options?.subjectTable || pluralize(snakeCase(subject));
+	return options?.subjectTable || pluralize(snakeCase(subject));
 }
 
 /*
@@ -28,7 +28,7 @@ export function getSubjectTable({ subject, options }: SubjectProps) {
     plural version of the object model.
 */
 export function getObjectTable({ object, options }: ObjectProps) {
-  return options?.objectTable || pluralize(snakeCase(object));
+	return options?.objectTable || pluralize(snakeCase(object));
 }
 
 /*
@@ -36,7 +36,7 @@ export function getObjectTable({ object, options }: ObjectProps) {
     or the snake case of the subject model.
 */
 export function getSubjectForeignKey({ subject, options }: SubjectProps) {
-  return options?.subjectForeignKey || snakeCase(subject) + '_id';
+	return options?.subjectForeignKey || `${snakeCase(subject)}_id`;
 }
 
 /*
@@ -44,16 +44,16 @@ export function getSubjectForeignKey({ subject, options }: SubjectProps) {
     or the snake case of the object model.
 */
 export function getObjectForeignKey({ object, options }: ObjectProps) {
-  return options?.objectForeignKey || snakeCase(object) + '_id';
+	return options?.objectForeignKey || `${snakeCase(object)}_id`;
 }
 
 /*
 	Allows you to define the model path for a model
 */
 export function getModelClass({ object, options }: ObjectProps) {
-  return options?.modelPath ? join(options.modelPath, object) : object;
+	return options?.modelPath ? join(options.modelPath, object) : object;
 }
 
 export function getViaTable(via: ViaProps) {
-  return via ? pluralize(snakeCase(via)) : null;
+	return via ? pluralize(snakeCase(via)) : null;
 }

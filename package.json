@@ -1,67 +1,64 @@
 {
-  "version": "0.0.13",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "dependencies": {
-    "lodash.snakecase": "^4.1.1",
-    "objection": "^3.1.5",
-    "pluralize": "^8.0.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@types/jest": "^30.0.0",
-    "@types/lodash.snakecase": "^4.1.9",
-    "@types/pluralize": "^0.0.33",
-    "eslint": "^9.32.0",
-    "globals": "^16.3.0",
-    "husky": "^9.1.7",
-    "mocha": "^11.7.1",
-    "nyc": "^17.1.0",
-    "size-limit": "^11.2.0",
-    "size-limit-preset-node-lib": "^0.4.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.38.0"
-  },
-  "author": "Paul Jensen <paul@anephenix.com>",
-  "scripts": {
-    "analyze": "size-limit --why",
-    "build": "tsc --project tsconfig.json",
-    "cover": "NODE_ENV=test npx nyc --reporter=lcov npm t",
-    "lint": "npx eslint .",
-    "prepare-patch-release": "npm run update-changelog && git add CHANGELOG.md && git commit -m \"Updated changelog\" && npm version patch",
-    "publish-patch-release": "npm run prepare-patch-release && git push origin main && git push --tags",
-    "size": "size-limit",
-    "start": "tsdx watch --target node",
-    "test": "NODE_ENV=test npx mocha --require ts-node/register --extensions ts test/**/*",
-    "update-changelog": "npx ts-node scripts/update-changelog.ts",
-    "prepare": "husky"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm test"
-    }
-  },
-  "name": "@anephenix/objection-relations",
-  "module": "dist/objection-relations.esm.js",
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "size-limit": [
-    {
-      "path": "dist/*.js",
-      "limit": "10 KB"
-    }
-  ]
+	"version": "0.0.13",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"src"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"dependencies": {
+		"lodash.snakecase": "^4.1.1",
+		"objection": "^3.1.5",
+		"pluralize": "^8.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.3",
+		"@types/lodash.snakecase": "^4.1.9",
+		"@types/node": "^24.1.0",
+		"@types/pluralize": "^0.0.33",
+		"@vitest/coverage-v8": "^3.2.4",
+		"globals": "^16.3.0",
+		"husky": "^9.1.7",
+		"size-limit": "^11.2.0",
+		"size-limit-preset-node-lib": "^0.4.0",
+		"typescript": "^5.8.3",
+		"vitest": "^3.2.4"
+	},
+	"author": "Paul Jensen <paul@anephenix.com>",
+	"scripts": {
+		"analyze": "size-limit --why",
+		"build": "tsc --project tsconfig.json",
+		"cover": "NODE_ENV=test vitest --coverage --run",
+		"lint": "npx @biomejs/biome check --write src test scripts",
+		"prepare-patch-release": "npm run update-changelog && git add CHANGELOG.md && git commit -m \"Updated changelog\" && npm version patch",
+		"publish-patch-release": "npm run prepare-patch-release && git push origin main && git push --tags",
+		"size": "size-limit",
+		"start": "tsdx watch --target node",
+		"test": "NODE_ENV=test vitest --run",
+		"update-changelog": "npx ts-node scripts/update-changelog.ts",
+		"prepare": "husky"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint && npm test"
+		}
+	},
+	"name": "@anephenix/objection-relations",
+	"module": "dist/objection-relations.esm.js",
+	"prettier": {
+		"printWidth": 80,
+		"semi": true,
+		"singleQuote": true,
+		"trailingComma": "es5"
+	},
+	"size-limit": [
+		{
+			"path": "dist/*.js",
+			"limit": "10 KB"
+		}
+	]
 }
