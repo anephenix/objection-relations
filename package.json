@@ -16,7 +16,7 @@
 		"pluralize": "^8.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.4",
+		"@biomejs/biome": "2.2.5",
 		"@types/lodash.snakecase": "^4.1.9",
 		"@types/node": "^24.6.2",
 		"@types/pluralize": "^0.0.33",
