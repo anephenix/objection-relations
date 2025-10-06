@@ -1,5 +1,108 @@
 # Changelog
 
+### 0.0.14 - Monday 6th October, 2025
+
+- Update-changelog script now uses Node.js' native TypeScript support
+- Updated the package-lock.json file
+- Merge pull request #109 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.2.5
+- Bump @biomejs/biome from 2.2.4 to 2.2.5
+- Merge pull request #108 from anephenix/dependabot/npm_and_yarn/types/node-24.6.2
+- Bump @types/node from 24.6.1 to 24.6.2
+- Merge pull request #107 from anephenix/dependabot/npm_and_yarn/types/node-24.6.1
+- Merge pull request #106 from anephenix/dependabot/npm_and_yarn/typescript-5.9.3
+- Bump @types/node from 24.6.0 to 24.6.1
+- Bump typescript from 5.9.2 to 5.9.3
+- Merge pull request #105 from anephenix/dependabot/npm_and_yarn/types/node-24.6.0
+- Bump @types/node from 24.5.2 to 24.6.0
+- Merge pull request #104 from anephenix/dependabot/npm_and_yarn/types/node-24.5.2
+- Bump @types/node from 24.5.1 to 24.5.2
+- Merge pull request #103 from anephenix/dependabot/npm_and_yarn/types/node-24.5.1
+- Bump @types/node from 24.5.0 to 24.5.1
+- Merge pull request #102 from anephenix/dependabot/npm_and_yarn/types/node-24.5.0
+- Bump @types/node from 24.4.0 to 24.5.0
+- Merge pull request #101 from anephenix/dependabot/npm_and_yarn/types/node-24.4.0
+- Bump @types/node from 24.3.1 to 24.4.0
+- Merge pull request #100 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.2.4
+- Bump @biomejs/biome from 2.2.3 to 2.2.4
+- Merge pull request #99 from anephenix/dependabot/npm_and_yarn/globals-16.4.0
+- Merge pull request #98 from anephenix/dependabot/npm_and_yarn/npm_and_yarn-f5c1666f0c
+- Bump globals from 16.3.0 to 16.4.0
+- Bump vite in the npm_and_yarn group across 1 directory
+- Merge pull request #97 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.2.3
+- Bump @biomejs/biome from 2.2.2 to 2.2.3
+- Merge pull request #96 from anephenix/dependabot/npm_and_yarn/types/node-24.3.1
+- Bump @types/node from 24.3.0 to 24.3.1
+- Merge pull request #95 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.2.2
+- Bump @biomejs/biome from 2.2.0 to 2.2.2
+- Merge pull request #94 from anephenix/dependabot/npm_and_yarn/types/node-24.3.0
+- Bump @types/node from 24.2.1 to 24.3.0
+- Merge pull request #93 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.2.0
+- Bump @biomejs/biome from 2.1.4 to 2.2.0
+- Merge pull request #92 from anephenix/dependabot/npm_and_yarn/types/node-24.2.1
+- Bump @types/node from 24.2.0 to 24.2.1
+- Merge pull request #91 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.1.4
+- Bump @biomejs/biome from 2.1.3 to 2.1.4
+- Merge pull request #90 from anephenix/dependabot/npm_and_yarn/types/node-24.2.0
+- Bump @types/node from 24.1.0 to 24.2.0
+- Merge pull request #89 from anephenix/dependabot/npm_and_yarn/typescript-5.9.2
+- Bump typescript from 5.8.3 to 5.9.2
+- Replaced eslint and mocha with biome and vitest
+- Merge pull request #88 from anephenix/dependabot/npm_and_yarn/eslint-9.32.0
+- Merge pull request #87 from anephenix/dependabot/npm_and_yarn/eslint/js-9.32.0
+- Bump eslint from 9.31.0 to 9.32.0
+- Bump @eslint/js from 9.31.0 to 9.32.0
+- Fix for yaml file for GitHub workflow
+- Merge pull request #86 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.38.0
+- Bump typescript-eslint from 8.37.0 to 8.38.0
+- Merge pull request #85 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.37.0
+- Bump typescript-eslint from 8.36.0 to 8.37.0
+- Merge pull request #83 from anephenix/dependabot/npm_and_yarn/eslint/js-9.31.0
+- Merge pull request #84 from anephenix/dependabot/npm_and_yarn/eslint-9.31.0
+- Bump eslint from 9.30.1 to 9.31.0
+- Bump @eslint/js from 9.30.1 to 9.31.0
+- Merge pull request #82 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.36.0
+- Bump typescript-eslint from 8.35.1 to 8.36.0
+- Updated dependencies
+- Merge pull request #79 from anephenix/dependabot/npm_and_yarn/globals-16.3.0
+- Bump globals from 16.2.0 to 16.3.0
+- Merge pull request #81 from anephenix/dependabot/npm_and_yarn/eslint-9.30.1
+- Bump eslint from 9.30.0 to 9.30.1
+- Merge pull request #78 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.35.1
+- Bump typescript-eslint from 8.35.0 to 8.35.1
+- Merge pull request #77 from anephenix/dependabot/npm_and_yarn/eslint-9.30.0
+- Merge pull request #76 from anephenix/dependabot/npm_and_yarn/eslint/js-9.30.0
+- Bump eslint from 9.29.0 to 9.30.0
+- Bump @eslint/js from 9.29.0 to 9.30.0
+- Merge pull request #75 from anephenix/dependabot/npm_and_yarn/mocha-11.7.1
+- Bump mocha from 11.7.0 to 11.7.1
+- Merge pull request #74 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.35.0
+- Bump typescript-eslint from 8.34.1 to 8.35.0
+- Merge pull request #73 from anephenix/dependabot/npm_and_yarn/mocha-11.7.0
+- Bump mocha from 11.6.0 to 11.7.0
+- Merge pull request #72 from anephenix/dependabot/npm_and_yarn/types/jest-30.0.0
+- Merge pull request #71 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.34.1
+- Bump @types/jest from 29.5.14 to 30.0.0
+- Bump typescript-eslint from 8.34.0 to 8.34.1
+- Merge pull request #70 from anephenix/dependabot/npm_and_yarn/eslint/js-9.29.0
+- Merge pull request #69 from anephenix/dependabot/npm_and_yarn/eslint-9.29.0
+- Bump @eslint/js from 9.28.0 to 9.29.0
+- Bump eslint from 9.28.0 to 9.29.0
+- Removed CodeClimate and updated dependencies
+- Merge pull request #68 from anephenix/dependabot/npm_and_yarn/mocha-11.6.0
+- Merge pull request #67 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.34.0
+- Bump mocha from 11.5.0 to 11.6.0
+- Bump typescript-eslint from 8.33.1 to 8.34.0
+- Small tweak on workflow file
+- Modified GitHub workflow permissions
+- Merge pull request #66 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.33.1
+- Bump typescript-eslint from 8.33.0 to 8.33.1
+- Merge pull request #65 from anephenix/dependabot/npm_and_yarn/eslint-9.28.0
+- Merge pull request #64 from anephenix/dependabot/npm_and_yarn/eslint/js-9.28.0
+- Bump eslint from 9.27.0 to 9.28.0
+- Bump @eslint/js from 9.27.0 to 9.28.0
+- Merge pull request #63 from anephenix/dependabot/npm_and_yarn/typescript-eslint-8.33.0
+- Bump typescript-eslint from 8.32.1 to 8.33.0
+
 ### 0.0.13 - Monday 26th May, 2025
 
 - Merge pull request #62 from anephenix/dependabot/npm_and_yarn/mocha-11.5.0
