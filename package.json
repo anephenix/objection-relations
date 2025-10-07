@@ -3,10 +3,16 @@
 	"license": "MIT",
 	"main": "dist/index.js",
 	"type": "module",
-	"typings": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		}
+	},
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
-		"src"
+		"README.md"
 	],
 	"engines": {
 		"node": ">=10"
@@ -40,6 +46,9 @@
 		"size": "size-limit",
 		"start": "tsdx watch --target node",
 		"test": "NODE_ENV=test vitest --run",
+		"test:build:commonjs": "node e2e/test-commonjs.cjs",
+		"test:build:esm": "node e2e/test-esm.js",
+		"test:e2e": "npm run build && npm run test:build:commonjs && npm run test:build:esm",
 		"update-changelog": "node --experimental-strip-types scripts/update-changelog.ts",
 		"prepare": "husky"
 	},

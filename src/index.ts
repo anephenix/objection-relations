@@ -1,6 +1,6 @@
 // Dependencies
-import type { OptionsProps } from "./global";
-import { relation } from "./relations";
+import type { OptionsProps } from "./global.js";
+import { relation } from "./relations.js";
 
 // Types
 

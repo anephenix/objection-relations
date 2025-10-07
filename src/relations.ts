@@ -3,7 +3,7 @@ import { Model } from "objection";
 import type {
 	CommonRelationOrTableOrForeignKeyProps,
 	RelationTypeProps,
-} from "./global";
+} from "./global.js";
 import {
 	getModelClass,
 	getObjectForeignKey,
@@ -11,7 +11,7 @@ import {
 	getSubjectForeignKey,
 	getSubjectTable,
 	getViaTable,
-} from "./helpers";
+} from "./helpers.js";
 
 const {
 	HasOneRelation,

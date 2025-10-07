@@ -25,6 +25,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Run e2e tests
+        run: npm test:e2e
+
   publish:
     needs: build
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
 import { join } from "node:path";
 import snakeCase from "lodash.snakecase";
 import pluralize from "pluralize";
-import type { CommonRelationOrTableOrForeignKeyProps } from "./global";
+import type { CommonRelationOrTableOrForeignKeyProps } from "./global.js";
 
 // Types
 
