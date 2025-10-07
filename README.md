@@ -61,6 +61,32 @@ The helper function will do the following:
 | ----- | ---------- | ----------- |
 | User  | users      | user_id     |
 
+*NOTE*
+
+For TypeScript files to resolve correctly in Objection.js, use the model directly instead of the name as a string:
+
+```typescript
+import { ObjectionRelation } from '@anephenix/objection-relations';
+import Address from './Address';
+
+class User extends Model {
+  static get tableName() {
+    return 'users';
+  }
+
+  static get relationMappings() {
+    const or = new ObjectionRelation({
+      subject: this.name,
+      modelPath: __dirname,
+    });
+    return {
+      // This changes from 'Address' to Address
+      addresses: or.hasMany(Address),
+    };
+  }
+}
+```
+
 ## Dependencies
 
 - Node.js

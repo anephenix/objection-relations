@@ -2,6 +2,7 @@
 import { Model } from "objection";
 import type {
 	CommonRelationOrTableOrForeignKeyProps,
+	ModelType,
 	RelationTypeProps,
 } from "./global.js";
 import {
@@ -85,7 +86,7 @@ export function hasManyThroughRelation({
 type RelationProps = CommonRelationOrTableOrForeignKeyProps & {
 	subject: string;
 	relType: "hasOne" | "hasMany" | "hasManyThrough" | "belongsTo";
-	object: string;
+	object: ModelType;
 	via?: string;
 };
 

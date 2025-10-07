@@ -1,3 +1,4 @@
+import { Model } from "objection";
 import { assert, describe, it } from "vitest";
 import {
 	getModelClass,
@@ -6,7 +7,16 @@ import {
 	getSubjectForeignKey,
 	getSubjectTable,
 	getViaTable,
+	isModel,
 } from "../../src/helpers";
+
+class User extends Model {
+	static tableName = "users";
+}
+
+class Post extends Model {
+	static tableName = "posts";
+}
 
 describe("helpers", () => {
 	describe("#getSubjectTable", () => {
@@ -59,6 +69,15 @@ describe("helpers", () => {
 					object: "UserPost",
 				});
 				assert.strictEqual(anotherResult, "user_posts");
+			});
+		});
+
+		describe("when passed an Objection.js model as the object", () => {
+			it("should return the object table", () => {
+				const result = getObjectTable({
+					object: Post,
+				});
+				assert.strictEqual(result, "posts");
 			});
 		});
 	});
@@ -115,6 +134,15 @@ describe("helpers", () => {
 				assert.strictEqual(anotherResult, "user_post_id");
 			});
 		});
+
+		describe("when passed an Objection.js model as the object", () => {
+			it("should return a generated objectForeignKey based on the model name", () => {
+				const result = getObjectForeignKey({
+					object: Post,
+				});
+				assert.strictEqual(result, "post_id");
+			});
+		});
 	});
 
 	describe("#getModelClass", () => {
@@ -138,6 +166,15 @@ describe("helpers", () => {
 				assert.strictEqual(result, "Post");
 			});
 		});
+
+		describe("when passed an Objection.js model as the object", () => {
+			it("should return the object model", () => {
+				const result = getModelClass({
+					object: Post,
+				});
+				assert.strictEqual(result, Post);
+			});
+		});
 	});
 
 	describe("#getViaTable", () => {
@@ -152,6 +189,20 @@ describe("helpers", () => {
 			it("should return a generated via table based on the subject and object models", () => {
 				const result = getViaTable(undefined);
 				assert.strictEqual(result, null);
+			});
+		});
+	});
+
+	describe("#isModel", () => {
+		describe("when passed an Objection.js model", () => {
+			it("should return true", () => {
+				assert.strictEqual(isModel(User), true);
+			});
+		});
+
+		describe("when passed a string", () => {
+			it("should return false", () => {
+				assert.strictEqual(isModel("User"), false);
 			});
 		});
 	});

@@ -1,5 +1,5 @@
 // Dependencies
-import type { OptionsProps } from "./global.js";
+import type { ModelType, OptionsProps } from "./global.js";
 import { relation } from "./relations.js";
 
 // Types
@@ -17,7 +17,7 @@ export class ObjectionRelation {
 		this.modelPath = modelPath;
 	}
 
-	belongsTo(object: string, options?: OptionsProps) {
+	belongsTo(object: ModelType, options?: OptionsProps) {
 		if (!options) options = { modelPath: this.modelPath };
 		if (!options.modelPath) options.modelPath = this.modelPath;
 		return relation({
@@ -28,7 +28,7 @@ export class ObjectionRelation {
 		});
 	}
 
-	hasOne(object: string, options?: OptionsProps) {
+	hasOne(object: ModelType, options?: OptionsProps) {
 		if (!options) options = { modelPath: this.modelPath };
 		if (!options.modelPath) options.modelPath = this.modelPath;
 		return relation({
@@ -39,7 +39,7 @@ export class ObjectionRelation {
 		});
 	}
 
-	hasMany(object: string, options?: OptionsProps) {
+	hasMany(object: ModelType, options?: OptionsProps) {
 		if (!options) options = { modelPath: this.modelPath };
 		if (!options.modelPath) options.modelPath = this.modelPath;
 		return relation({
@@ -50,7 +50,7 @@ export class ObjectionRelation {
 		});
 	}
 
-	hasManyThrough(object: string, via: string, options?: OptionsProps) {
+	hasManyThrough(object: ModelType, via: string, options?: OptionsProps) {
 		if (!options) options = { modelPath: this.modelPath };
 		if (!options.modelPath) options.modelPath = this.modelPath;
 		return relation({
