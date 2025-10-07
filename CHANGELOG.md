@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.0.16 - Tuesday 7th October, 2025
+
+- Merge branch 'main' of github.com:anephenix/objection-relations
+- Merge pull request #110 from anephenix/dependabot/npm_and_yarn/types/node-24.7.0
+- Bump @types/node from 24.6.2 to 24.7.0
+
 ### 0.0.15 - Tuesday 7th October, 2025
 
 - Added e2e tests and changed how the project is built to ensure that the exports work fine
