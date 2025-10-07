@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.18 - Tuesday 7th October, 2025
+
+- Added support for TypeScript by allowing the relations to be passed a model file so that Objection.js does not error on file resolution
+
 ### 0.0.17 - Tuesday 7th October, 2025
 
 - Fixed a silly typo in the GitHub workflow files
