@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.20 - Tuesday 7th October, 2025
+
+- One more tweak to the package.json file
+
 ### 0.0.19 - Tuesday 7th October, 2025
 
 - Fixes for the package.json file
