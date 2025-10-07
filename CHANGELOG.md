@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.15 - Tuesday 7th October, 2025
+
+- Added e2e tests and changed how the project is built to ensure that the exports work fine
+
 ### 0.0.14 - Monday 6th October, 2025
 
 - Update-changelog script now uses Node.js' native TypeScript support
