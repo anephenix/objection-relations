@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.21 - Tuesday 7th October, 2025
+
+- Do a build, just in case that is the root cause of the missing files issue
+
 ### 0.0.20 - Tuesday 7th October, 2025
 
 - One more tweak to the package.json file
