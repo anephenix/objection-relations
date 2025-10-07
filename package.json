@@ -1,6 +1,6 @@
 {
 	"name": "@anephenix/objection-relations",
-	"version": "0.0.19",
+	"version": "0.0.20",
 	"license": "MIT",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -11,7 +11,9 @@
 			"default": "./dist/index.js"
 		}
 	},
-	"engines": { "node": ">=16" },
+	"engines": {
+		"node": ">=16"
+	},
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist",
