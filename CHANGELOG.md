@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.19 - Tuesday 7th October, 2025
+
+- Fixes for the package.json file
+
 ### 0.0.18 - Tuesday 7th October, 2025
 
 - Added support for TypeScript by allowing the relations to be passed a model file so that Objection.js does not error on file resolution
