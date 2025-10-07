@@ -1,7 +1,7 @@
 {
+	"name": "@anephenix/objection-relations",
 	"version": "0.0.18",
 	"license": "MIT",
-	"main": "dist/index.js",
 	"type": "module",
 	"exports": {
 		".": {
@@ -14,9 +14,6 @@
 		"dist",
 		"README.md"
 	],
-	"engines": {
-		"node": ">=10"
-	},
 	"dependencies": {
 		"lodash.snakecase": "^4.1.1",
 		"objection": "^3.1.5",
@@ -57,8 +54,6 @@
 			"pre-commit": "npm run lint && npm test"
 		}
 	},
-	"name": "@anephenix/objection-relations",
-	"module": "dist/objection-relations.esm.js",
 	"prettier": {
 		"printWidth": 80,
 		"semi": true,
