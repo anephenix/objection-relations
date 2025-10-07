@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.17 - Tuesday 7th October, 2025
+
+- Fixed a silly typo in the GitHub workflow files
+
 ### 0.0.16 - Tuesday 7th October, 2025
 
 - Merge branch 'main' of github.com:anephenix/objection-relations
