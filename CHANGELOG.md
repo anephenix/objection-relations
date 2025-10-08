@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.22 - Wednesday 8th October, 2025
+
+- Added publint to verify the package.json
+
 ### 0.0.21 - Tuesday 7th October, 2025
 
 - Do a build, just in case that is the root cause of the missing files issue
