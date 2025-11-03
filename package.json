@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.3.2",
 		"@types/lodash.snakecase": "^4.1.9",
-		"@types/node": "^24.9.2",
+		"@types/node": "^24.10.0",
 		"@types/pluralize": "^0.0.33",
 		"@vitest/coverage-v8": "^4.0.5",
 		"globals": "^16.4.0",
