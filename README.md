@@ -284,4 +284,4 @@ npm t
 
 ## Licence and credits
 
-&copy;2025 Anephenix OÜ. Objection-relations is licenced under the MIT Licence.
+&copy;2025 Anephenix Ltd. Objection-relations is licenced under the MIT Licence.
