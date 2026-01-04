@@ -1,5 +1,34 @@
 # Changelog
 
+### 0.0.24 - Sunday 4th January, 2026
+
+- Tweaks for new publish workflow
+- Updated dependencies
+- Merge pull request #169 from anephenix/dependabot/npm_and_yarn/globals-17.0.0
+- Bump globals from 16.5.0 to 17.0.0
+- Updated dependencies
+- Merge pull request #168 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.3.10
+- Bump @biomejs/biome from 2.3.9 to 2.3.10
+- Merge pull request #167 from anephenix/dependabot/npm_and_yarn/vitest-4.0.16
+- Merge branch 'main' into dependabot/npm_and_yarn/vitest-4.0.16
+- Merge pull request #165 from anephenix/dependabot/npm_and_yarn/vitest/coverage-v8-4.0.16
+- Bump @vitest/coverage-v8 from 4.0.15 to 4.0.16
+- Bump vitest from 4.0.15 to 4.0.16
+- Merge pull request #166 from anephenix/dependabot/npm_and_yarn/types/node-25.0.3
+- Bump @types/node from 25.0.2 to 25.0.3
+- Merge pull request #164 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.3.9
+- Bump @biomejs/biome from 2.3.8 to 2.3.9
+- Merge pull request #163 from anephenix/dependabot/npm_and_yarn/types/node-25.0.2
+- Bump @types/node from 25.0.1 to 25.0.2
+- Merge pull request #162 from anephenix/dependabot/npm_and_yarn/types/node-25.0.1
+- Bump @types/node from 25.0.0 to 25.0.1
+- Merge pull request #161 from anephenix/dependabot/npm_and_yarn/types/node-25.0.0
+- Bump @types/node from 24.10.2 to 25.0.0
+- Merge pull request #160 from anephenix/dependabot/npm_and_yarn/publint-0.3.16
+- Bump publint from 0.3.15 to 0.3.16
+- Merge pull request #159 from anephenix/dependabot/npm_and_yarn/types/node-24.10.2
+- Bump @types/node from 24.10.1 to 24.10.2
+
 ### 0.0.23 - Wednesday 3rd December, 2025
 
 - Updated license
