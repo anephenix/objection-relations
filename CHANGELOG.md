@@ -1,5 +1,27 @@
 # Changelog
 
+### 0.0.26 - Wednesday 8th April, 2026
+
+- Updated dependencies
+- Merge pull request #224 from anephenix/dependabot/npm_and_yarn/npm_and_yarn-7c6ac41456
+- Bump vite in the npm_and_yarn group across 1 directory
+- Merge pull request #223 from anephenix/dependabot/npm_and_yarn/npm_and_yarn-52571dc7e9
+- Bump lodash in the npm_and_yarn group across 1 directory
+- Merge pull request #222 from anephenix/dependabot/npm_and_yarn/types/node-25.5.2
+- Bump @types/node from 25.5.0 to 25.5.2
+- Merge pull request #221 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.4.10
+- Bump @biomejs/biome from 2.4.9 to 2.4.10
+- Merge pull request #220 from anephenix/dependabot/npm_and_yarn/vitest/coverage-v8-4.1.2
+- Bump @vitest/coverage-v8 from 4.1.1 to 4.1.2
+- Merge pull request #218 from anephenix/dependabot/npm_and_yarn/biomejs/biome-2.4.9
+- Merge pull request #217 from anephenix/dependabot/npm_and_yarn/npm_and_yarn-3f9ee708be
+- Bump @biomejs/biome from 2.4.8 to 2.4.9
+- Bump picomatch in the npm_and_yarn group across 1 directory
+- Merge pull request #216 from anephenix/dependabot/npm_and_yarn/typescript-6.0.2
+- Merge pull request #214 from anephenix/dependabot/npm_and_yarn/vitest/coverage-v8-4.1.1
+- Bump typescript from 5.9.3 to 6.0.2
+- Bump @vitest/coverage-v8 from 4.1.0 to 4.1.1
+
 ### 0.0.25 - Saturday 21st March, 2026
 
 - Updated dependencies
