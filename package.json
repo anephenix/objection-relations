@@ -36,7 +36,7 @@
 		"@biomejs/biome": "2.4.10",
 		"@size-limit/file": "^12.0.0",
 		"@types/lodash.snakecase": "^4.1.9",
-		"@types/node": "^25.5.2",
+		"@types/node": "^25.6.0",
 		"@types/pluralize": "^0.0.33",
 		"@vitest/coverage-v8": "^4.1.2",
 		"globals": "^17.4.0",
