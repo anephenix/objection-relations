@@ -45,7 +45,7 @@
 		"size-limit": "^13.0.1",
 		"size-limit-node-esbuild": "^0.4.0",
 		"typescript": "^7.0.2",
-		"vitest": "^4.1.10"
+		"vitest": "^4.1.11"
 	},
 	"author": "Paul Jensen <paul@anephenix.com>",
 	"scripts": {
