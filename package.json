@@ -33,7 +33,7 @@
 		"pluralize": "^8.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.10",
+		"@biomejs/biome": "2.5.11",
 		"@size-limit/file": "^13.0.3",
 		"@types/lodash.snakecase": "^4.1.9",
 		"@types/node": "^26.3.0",
