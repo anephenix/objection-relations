@@ -34,7 +34,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.13",
-		"@size-limit/file": "^13.0.3",
+		"@size-limit/file": "^13.1.1",
 		"@types/lodash.snakecase": "^4.1.9",
 		"@types/node": "^26.5.1",
 		"@types/pluralize": "^0.0.33",
