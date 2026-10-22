@@ -29,7 +29,7 @@
 	},
 	"dependencies": {
 		"lodash.snakecase": "^4.1.1",
-		"objection": "^4.1.0",
+		"objection": "^4.2.0",
 		"pluralize": "^8.0.0"
 	},
 	"devDependencies": {
